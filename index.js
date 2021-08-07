@@ -170,17 +170,44 @@ bookApi.get("/publications/book/:isbn", (req, res) => {
 });
 
 
+/*
+Route			/book/new
+Description		Add new Book
+Access			PUBLIC
+Parameters		NONE
+Method			POST
+*/
+
+
 bookApi.post("/book/new", (req, res) => {
 	const newBook = req.body;
 	database.books.push(newBook);
 	return res.json({updatedBooks: database.books});
 });
 
+
+/*
+Route			/author/new
+Description		Add new author
+Access			PUBLIC
+Parameters		NONE
+Method			POST
+*/
+
+
 bookApi.post("/author/new", (req, res) => {
 	const newAuthor = req.body;
 	database.author.push(newAuthor);
 	return res.json(database.author);
 });
+
+/*
+Route			/Publications/new
+Description		Add new Publication
+Access			PUBLIC
+Parameters		NONE
+Method			POST
+*/
 
 bookApi.post("/publications/new", (req, res) => {
 	const newPublication = req.body;
